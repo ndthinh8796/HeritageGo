@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #262626;
+}
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+    background-color: #fafafa;
+    height: 80px;
+    color: #262626;
+}
+
+.navBar--border {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
+}
+
+.navBar__left {
+    margin: auto;
+}
+
+.navBar__center {
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: flex-start; */
+}
+
+.navBar__logo img:hover {
+    transform: scale(1.1);
+    transition-duration: 100ms;
+    transition-timing-function: ease-out;
+}
+
+.navBar__areaName {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.navBar__text {
+    flex: 1;
+}
+
+.navBar__primaryArea {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+.navBar__secondaryArea {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+.navBar__compassIcon {
+    font-size: 24px;
+    margin: 6px;
+}
+
+.navBar__compassIcon--spin {
+    animation-name: compassSpin;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes compassSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.navBar__right {
+    margin: auto;
+    align-items: center;
+}
+
+.navBar__loginButton {
+    width: max-content;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding: 8px;
+    margin: 24px;
+    border-style: solid;
+    background-color: #fafafa;
+    border-radius: 3px;
+    border-color: #e6e6e6;
+}
+
+.navBar__dropdownMenu {
+  display: none;
+}
+
+@media (max-width:600px) {
+    body {
+        width: 100%;
+    }
+
+    .navBar__logo {
+        margin: 24px;
+    }
+
+    .navBar__areaName {
+        margin: 24px 24px 24px auto;
+        width: max-content;
+    }
+
+    .navBar__loginButton {
+        margin: 24px;
+    }
+}
+
+@media (max-width: 411px) {
+  .navBar__center {
+    width: 100%;
+  }
+
+  .navBar__logo {
+    transform: scale(0.75);
+  }
+
+  .navBar__areaName {
+    transform: scale(0.75);
+    margin-right: 0;
+  }
+
+  .navBar__primaryArea {
+    font-size: 15px;
+  }
+
+  .navBar__dropdownMenu {
+    display: inline-block;
+    margin: 0 5px 0 15px;
+    border: 2px solid;
+    padding: 5px;
+    border-radius: 12%;
+    border-color: rgb(0, 0, 0, 0.5)
+  }
+
+  .navBar__loginButton {
+    display: none;
+  }
+}
