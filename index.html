@@ -12,6 +12,9 @@
     <!-- CSS Files -->
     <link rel="stylesheet" href="./css/main.css">
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <!-- Favicons for various platforms -->
 
     <!-- The classic favicon, displayed in the tabs. -->
@@ -83,21 +86,68 @@
         </div> <!-- ./navBar__center -->
         <div class="navBar__right">
             <!-- a button that allows the user to log-in. -->
-            <button class="navBar__loginButton">Log In</button>
+            <button class="navBar__loginButton" data-toggle="modal" data-target="#loginModal">Log In</button>
+
+            <!-- log in modal -->
+            <div id=loginModal class="navBar__loginModal modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Log In</h5>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input class="form-control loginModal__input" id="email" type="text" name="email" required>
+                        <label class="form-control-placeholder" for="email">Email address</label>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control loginModal__input" id="password" type="password" name="password" required>
+                        <label class="form-control-placeholder" for="password">Password</label>
+                        <a class="modal__lockIcon" onclick="showPassword()" style="position: absolute; right: 0; top: 10px"><i id="lockIcon" class="fas fa-lock"></i></a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" style="width:100%;">Log In</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div> <!-- ./navBar__right -->
     </header> <!-- ./navBar -->
     <section>
-      <p>sajodhasjhxjczk sadsa</p>
     </section>
     <footer>
 
     </footer>
+    <script type="text/javascript">
+      function showPassword() {
+        input = document.querySelector('#password');
+        lockIcon = document.querySelector('#lockIcon');
+        if (input.type === 'password') {
+          input.type = 'text';
+          lockIcon.className = 'fas fa-unlock-alt';
+        } else if (input.type === 'text') {
+          input.type = 'password';
+          lockIcon.className = 'fas fa-lock';
+        };
+      };
+    </script>
     <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
     crossorigin="anonymous">
     </script>
     <script src="js/heritagego-service.1.0.0.js"></script>
-</script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+    <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    </script>
 </body>
 </html>

@@ -97,6 +97,40 @@ body {
     border-color: #e6e6e6;
 }
 
+.navBar__loginButton:focus {
+    outline: none;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+.loginModal__input {
+    margin-bottom: 25px;
+    border: none !important;
+    border-radius: 0px !important;
+    border-bottom: 0.5px solid #498fff !important;
+    box-shadow: none !important;
+}
+
+.form-control-placeholder {
+    position: absolute;
+    top: 0;
+    padding: 7px 0 0 0;
+    transition: all 150ms;
+    opacity: 0.5;
+}
+
+.form-control:focus + .form-control-placeholder,
+.form-control:valid + .form-control-placeholder {
+    font-size: 75%;
+    color: #0043b2;
+    font-weight: bold;
+    transform: translate3d(0, -100%, 0);
+    opacity: 1;
+}
+
 .navBar__dropdownMenu {
   display: none;
 }
