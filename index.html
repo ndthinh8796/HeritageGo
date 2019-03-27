@@ -59,6 +59,12 @@
         The 57x57 resolution is convenient for non-retina iPhone with iOS6 or prior -->
     <link rel="apple-touch-icon" sizes="57x57" href="./apple-icon-57x57.png">
 
+    <!-- Javascript files -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous">
+    </script>
+    <script src="js/heritagego-service.1.0.0.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+
 </head>
 <body>
     <header class='navBar navBar--border'>
@@ -116,30 +122,59 @@
 
         </div> <!-- ./navBar__right -->
     </header> <!-- ./navBar -->
-    <section>
+    <section class="main">
+      <div class="main_mid mx-auto" >
+        <!-- Post 1-->
+            <div class="post post--display-none border p-1 rounded container mt-2" style="width: 600px;">
+                <div class="post__header media mb-2">
+                  <div class="post__avatar m-2">
+                    <img id="user-avatar" src="img/Golden-Retriever-Puppy.jpg" alt="" class="img-fluid">
+                  </div>
+                  <div class="post__detail container">
+                    <div class="post__top row mb-2">
+                      <div class="post__title font-weight-bold">
+                        Le Van Duyet Mausoleum - Saigon - 1965
+                      </div>
+                      <img src="./img/translate_icon.png" id="translate-icon" class="ml-auto mr-3">
+                    </div>
+
+                    <div class="post__siteinfo row">
+                        <i class="fas fa-map-marker-alt m-1"></i><div id="area_name">
+                          Sài Gòn, Việt Nam
+                        </div>
+                        <i class="far fa-clock m-1 ml-4">1965</i>
+                    </div>
+                  </div>
+                </div>
+
+                <img src="./img/LVD.png" alt="postImage" class="post__image img-fluid">
+
+                <div class="container border-bottom px-1 mb-2">
+                  <div class="post__reaction row mx-4 my-2">
+                    <div class="reaction__left row">
+                        <i class="fa-lg fas fa-heart p-2">&nbsp<span id="likes">0</span></i>
+                        <i class="fa-lg fas fa-comment p-2">&nbsp<span id="comments">0</span></i>
+                        <i class="fa-lg fas fa-camera p-2">&nbsp0</i>
+                    </div>
+                    <div class="reaction__right ml-auto">
+                      <div class="reaction__bookmark">
+                        <i class="fa-lg fas fa-bookmark pt-2"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="post__comment">
+                    <input class="my-2" type="text" placeholder="Write a comment" id="comment"></input>
+                    <span class="fas fa-paper-plane" id="plane-icon"></span>
+                </div>
+            </div>
+          </div>
+            <!-- End Post 1-->
     </section>
     <footer>
 
     </footer>
-    <script type="text/javascript">
-      function showPassword() {
-        input = document.querySelector('#password');
-        lockIcon = document.querySelector('#lockIcon');
-        if (input.type === 'password') {
-          input.type = 'text';
-          lockIcon.className = 'fas fa-unlock-alt';
-        } else if (input.type === 'text') {
-          input.type = 'password';
-          lockIcon.className = 'fas fa-lock';
-        };
-      };
-    </script>
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
-    crossorigin="anonymous">
-    </script>
-    <script src="js/heritagego-service.1.0.0.js"></script>
     <script
     src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -148,6 +183,5 @@
     src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-    </script>
 </body>
 </html>

@@ -13,6 +13,9 @@ body {
     background-color: #fafafa;
     height: 80px;
     color: #262626;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .navBar--border {
@@ -21,6 +24,7 @@ body {
 
 .navBar__left {
     margin: auto;
+    flex: 1 10 0;
 }
 
 .navBar__center {
@@ -28,7 +32,8 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* justify-content: flex-start; */
+    flex: 1 1 600px;
+    max-width: 600px;
 }
 
 .navBar__logo img:hover {
@@ -81,8 +86,11 @@ body {
 }
 
 .navBar__right {
-    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
     align-items: center;
+    flex: 1 10 0;
+    justify-content: flex-end;
 }
 
 .navBar__loginButton {
@@ -184,4 +192,88 @@ body {
   .navBar__loginButton {
     display: none;
   }
+}
+
+/* Post */
+.main__mid {
+    display: flex;
+    width: 600px;
+    flex-direction: column;
+    margin-right: 80px;
+}
+
+.main {
+    margin-top: 100px;
+}
+
+.post--display-none {
+  display: none
+}
+
+.post__header {
+    display: flex;
+    align-items: center;
+}
+
+#translate-icon {
+    float: right;
+    width: 24px;
+    height: 24px;
+    margin-right: 20px;
+    animation-name: shake;
+    animation-duration: 1000ms;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: -1;
+}
+
+@keyframes shake {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    25% {
+      transform: rotate(30deg);
+    }
+
+    50% {
+      transform: rotate(0deg);
+    }
+
+    75% {
+      transform: rotate(-30deg);
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
+}
+.post__avatar {
+    width: 50px;
+}
+
+.post__image {
+    width: 600px;
+    height: auto;
+}
+
+.post__comment {
+    display: flex;
+    flex-direction: row;
+}
+
+
+#comment {
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 20px;
+    height: 40px;
+    padding: 5px 5px 5px 20px;
+    outline: none;
+}
+#plane-icon {
+    float: right;
+    margin-left: -40px;
+    margin-top: 20px;
+    color: gray;
 }
