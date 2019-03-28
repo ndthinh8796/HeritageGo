@@ -30,12 +30,11 @@ function scrollListen() {
 
 function showPosts() {
   addPosts(5);
-  scrollListen();
 }
 
 
 function addPosts(n) {
-  $(window).off('scroll')
+  $(window).off('scroll');
   mHeritageGoService.getPhotos({limit: n, offset: offset})
     .then(photos => {
       $.each(photos, function(index, photo) {
@@ -61,7 +60,7 @@ function addPosts(n) {
           })
           .catch(error => { console.log(error); });
       })
-      scrollListen();
     })
-    .catch($error => { console.log($error); });
+    .catch($error => { console.log($error); }).then(() => {scrollListen();});
+
 }

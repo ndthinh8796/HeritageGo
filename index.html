@@ -94,35 +94,34 @@
             <!-- a button that allows the user to log-in. -->
             <button class="navBar__loginButton" data-toggle="modal" data-target="#loginModal">Log In</button>
 
-            <!-- log in modal -->
-            <div id=loginModal class="navBar__loginModal modal fade" role="dialog">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Log In</h5>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <input class="form-control loginModal__input" id="email" type="text" name="email" required>
-                        <label class="form-control-placeholder" for="email">Email address</label>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control loginModal__input" id="password" type="password" name="password" required>
-                        <label class="form-control-placeholder" for="password">Password</label>
-                        <a class="modal__lockIcon" onclick="showPassword()" style="position: absolute; right: 0; top: 10px"><i id="lockIcon" class="fas fa-lock"></i></a>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" style="width:100%;">Log In</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div> <!-- ./navBar__right -->
     </header> <!-- ./navBar -->
     <section class="main">
+      <!-- log in modal -->
+      <div id=loginModal class="navBar__loginModal modal fade" role="dialog">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Log In</h5>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+              <div class="form-group">
+                  <input class="form-control loginModal__input" id="email" type="text" name="email" required>
+                  <label class="form-control-placeholder" for="email">Email address</label>
+              </div>
+              <div class="form-group">
+                  <input class="form-control loginModal__input" id="password" type="password" name="password" required>
+                  <label class="form-control-placeholder" for="password">Password</label>
+                  <a class="modal__lockIcon" onclick="showPassword()" style="position: absolute; right: 0; top: 10px"><i id="lockIcon" class="fas fa-lock"></i></a>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" style="width:100%;">Log In</button>
+          </div>
+        </div>
+      </div>
+    </div>
       <div class="main_mid mx-auto" >
         <!-- Post 1-->
             <div class="post post--display-none border p-1 rounded container mt-2" style="width: 600px;">
