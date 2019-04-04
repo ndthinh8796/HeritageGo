@@ -89,7 +89,7 @@
                       <i class="navBar__compassIcon--spin far fa-compass"></i>
                   </div> <!-- ./navBar__compassIcon -->
                   <!-- drop down menu to replace login button if screen width smaller than 411px -->
-                  <i class="navBar__dropdownMenu fas fa-sign-in-alt" data-toggle="modal" data-target="#loginModal"></i> <!-- ./navBar__dropdownMenu -->
+                  <i class="navBar__signIn fas fa-sign-in-alt" data-toggle="modal" data-target="#loginModal"></i> <!-- ./navBar__signIn -->
               </div> <!-- ./navBar__areaName -->
           </div> <!-- ./navBar__center -->
           <div class="navBar__right">
@@ -114,47 +114,74 @@
                 <div class="form-group">
                     <input class="form-control loginModal__input" id="password" type="password" name="password" place-holder=" " required>
                     <label class="form-control-placeholder" for="password">Password</label>
-                    <a class="modal__lockIcon" onclick="showPassword()" style="position: absolute; right: 0; top: 10px"><i id="lockIcon" class="fas fa-lock"></i></a>
+                    <a class="modal__lockIcon" onclick="showPassword()"><i id="lockIcon" class="fas fa-lock"></i></a>
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" style="width:100%;">Log In</button>
+              <button type="button" class="btn btn-primary">Log In</button>
             </div>
           </div>
         </div>
       </div>
-    <section class="main">    
+    <section class="main">
       <div class="main_mid mx-auto" >
         <!-- Post 1-->
-            <div class="post post--display-none border p-1 rounded container mt-2" style="width: 600px;">
+            <article class="post post--display-none border p-1 rounded container mt-2">
                 <div class="post__header media mb-2">
                   <div class="post__avatar m-2">
-                    <img id="user-avatar" src="img/Golden-Retriever-Puppy.jpg" alt="" class="img-fluid">
+                    <img src="" alt="" class="post__user-avatar img-fluid">
                   </div>
                   <div class="post__detail container">
                     <div class="post__top row mb-2">
                       <div class="post__title font-weight-bold">
-                        Le Van Duyet Mausoleum - Saigon - 1965
                       </div>
-                      <img src="./img/translate_icon.png" id="translate-icon" class="ml-auto mr-3">
+                      <!-- <div class="post__translate"> -->
+                        <!-- <script type="text/javascript">
+                          function showList() {
+                            let translateIcon = $(".post__translte-icon");
+                            let translateDropdownMenu = $(".post__translate-dropdown-menu");
+
+                            if (translateIcon.css("display") != "none") {
+                              translateIcon.css({
+                                "display": "none"
+                              })
+                              translateDropdownMenu.removeAttr("display");
+                            } else {
+                              translateDropdownMenu.css({
+                                "display": "none"
+                              })
+                              translateIcon.removeAttr("display");
+                            };
+                          }
+
+                          function stopShake() {
+                            let translateIcon = $(".post__translate-icon").removeClass("post__translate-icon--shake");
+                          }
+                        </script> -->
+
+                        <!-- <select class="post__translate-dropdown-menu" name="dropdown" >
+                          <option value="none"></option>
+                        </select> -->
+                        <img src="./img/translate_icon.png" class="post__translate-icon post__translate-icon--shake ml-auto mr-3">
+                      <!-- </div> -->
                     </div>
 
                     <div class="post__siteinfo row">
                         <i class="fas fa-map-marker-alt m-1"></i><div id="area_name">
-                          Sài Gòn, Việt Nam
                         </div>
                         <i class="far fa-clock m-1 ml-4">1965</i>
                     </div>
                   </div>
                 </div>
 
+
                 <img src="./img/LVD.png" alt="postImage" class="post__image img-fluid">
 
                 <div class="container border-bottom px-1 mb-2">
                   <div class="post__reaction row mx-4 my-2">
                     <div class="reaction__left row">
-                        <i class="fa-lg fas fa-heart p-2">&nbsp<span id="likes">0</span></i>
-                        <i class="fa-lg fas fa-comment p-2">&nbsp<span id="comments">0</span></i>
+                        <i class="fa-lg fas fa-heart p-2">&nbsp<span class="post__likes-counter">0</span></i>
+                        <i class="fa-lg fas fa-comment p-2">&nbsp<span class="post__comments-counter">0</span></i>
                         <i class="fa-lg fas fa-camera p-2">&nbsp0</i>
                     </div>
                     <div class="reaction__right ml-auto">
@@ -166,10 +193,10 @@
                 </div>
 
                 <div class="post__comment">
-                    <input class="my-2" type="text" placeholder="Write a comment" id="comment"></input>
-                    <span class="fas fa-paper-plane" id="plane-icon"></span>
+                    <input class="my-2" type="text" placeholder="Write a comment"></input>
+                    <span class="post__plane-icon fas fa-paper-plane"></span>
                 </div>
-            </div>
+            </article>
           </div>
             <!-- End Post 1-->
     </section>

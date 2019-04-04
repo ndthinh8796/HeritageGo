@@ -7,7 +7,7 @@ function scrollListen() {
   $(window).bind("scroll", function() {
     if (
       $(window).scrollTop() + $(window).height() >
-      $(document).height() - 300
+      $(document).height() - 500
     ) {
       addPosts(3);
     }
@@ -32,7 +32,7 @@ function addPosts(n) {
             post.removeClass("post--display-none");
 
             post
-              .find("#user-avatar")
+              .find(".post__user-avatar")
               .attr("src", "http:" + photo_detail.account.picture_url);
 
             post.find(".post__title").html(photo_detail.title[0].content);
@@ -43,9 +43,9 @@ function addPosts(n) {
               .find(".post__image")
               .attr("src", "http:" + photo_detail.image_url + "?size=medium");
 
-            post.find("#likes").html(photo_detail.like_count);
+            post.find(".post__likes-counter").html(photo_detail.like_count);
 
-            post.find("#comments").html(photo_detail.comment_count);
+            post.find(".post__comments-counter").html(photo_detail.comment_count);
             feed.append(post);
             offset += n;
           })

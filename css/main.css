@@ -157,7 +157,17 @@ body {
     opacity: 1;
 }
 
-.navBar__dropdownMenu {
+.modal__lockIcon {
+  position: absolute; 
+  right: 0; 
+  top: 10px;
+}
+
+.modal-footer button {
+  width: 100%;
+}
+
+.navBar__signIn {
   display: none;
 }
 
@@ -199,7 +209,7 @@ body {
     font-size: 15px;
   }
 
-  .navBar__dropdownMenu {
+  .navBar__signIn {
     display: inline-block;
     margin: 0 5px 0 15px;
     border: 2px solid;
@@ -211,22 +221,28 @@ body {
   .navBar__loginButton {
     display: none;
   }
+
+  .main {
+    font-size: 4vw;
+  }
+
+  .post__translate-icon {
+    height: 5vw;
+  }
 }
+
 
 /* Post */
-.main__mid {
-    display: flex;
-    width: 600px;
-    flex-direction: column;
-    margin-right: 80px;
-}
-
 .main {
     margin-top: 100px;
 }
 
+.post {
+  max-width: 600px !important;
+}
+
 .post--display-none {
-  display: none
+  display: none;
 }
 
 .post__header {
@@ -234,16 +250,23 @@ body {
     align-items: center;
 }
 
-#translate-icon {
+.post__translate:hover {
+  cursor: pointer;
+}
+
+.post__translate-icon {
     float: right;
-    width: 24px;
-    height: 24px;
-    margin-right: 20px;
-    animation-name: shake;
-    animation-duration: 1000ms;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    max-height: 24px;
+    margin-right: 2vw;
+    margin-top: 2vh;
     z-index: -1;
+}
+
+.post__translate-icon--shake {
+  animation-name: shake;
+  animation-duration: 1000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 @keyframes shake {
@@ -282,7 +305,7 @@ body {
 }
 
 
-#comment {
+.post__comment input {
     width: 100%;
     border: 1px solid gray;
     border-radius: 20px;
@@ -290,7 +313,7 @@ body {
     padding: 5px 5px 5px 20px;
     outline: none;
 }
-#plane-icon {
+.post__plane-icon {
     float: right;
     margin-left: -40px;
     margin-top: 20px;
