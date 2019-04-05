@@ -13,6 +13,7 @@ body {
     width: 100%;
     overflow: hidden;
     height: 80px;
+    z-index: 100;
 }
 
 /* navigation bar */
@@ -313,9 +314,14 @@ body {
     padding: 5px 5px 5px 20px;
     outline: none;
 }
+
 .post__plane-icon {
     float: right;
     margin-left: -40px;
     margin-top: 20px;
     color: gray;
+}
+
+.post__dropdown-content option:hover {
+  background-color: #262626;
 }

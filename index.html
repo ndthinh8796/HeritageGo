@@ -135,35 +135,18 @@
                     <div class="post__top row mb-2">
                       <div class="post__title font-weight-bold">
                       </div>
-                      <!-- <div class="post__translate"> -->
-                        <!-- <script type="text/javascript">
-                          function showList() {
-                            let translateIcon = $(".post__translte-icon");
-                            let translateDropdownMenu = $(".post__translate-dropdown-menu");
-
-                            if (translateIcon.css("display") != "none") {
-                              translateIcon.css({
-                                "display": "none"
-                              })
-                              translateDropdownMenu.removeAttr("display");
-                            } else {
-                              translateDropdownMenu.css({
-                                "display": "none"
-                              })
-                              translateIcon.removeAttr("display");
-                            };
-                          }
-
-                          function stopShake() {
-                            let translateIcon = $(".post__translate-icon").removeClass("post__translate-icon--shake");
-                          }
-                        </script> -->
-
-                        <!-- <select class="post__translate-dropdown-menu" name="dropdown" >
-                          <option value="none"></option>
-                        </select> -->
-                        <img src="./img/translate_icon.png" class="post__translate-icon post__translate-icon--shake ml-auto mr-3">
-                      <!-- </div> -->
+                      <div class="post__translate" style="position: relative">
+                        <button class="post__translate-button" type="button" onclick="showMenu(this);" style="border: 0; padding: 0; background-color: #fff;">
+                          <img src="./img/translate_icon.png" class="post__translate-icon post__translate-icon--shake ml-auto mr-3">
+                          <i id="lockIcon" class="fas fa-sort-down" style="right: 10px; top: 0px; font-size: 15px; color: gray"></i>
+                        </button>
+                        <div class="post__dropdown-content" value="en" style="background-color: #fff; border: 1px solid gray; position: absolute; display: none;">
+                          <option value="en" onclick="changeOption(value);">English</option>
+                          <option value="fr" onclick="changeOption(value);">French</option>
+                          <option value="sp" onclick="changeOption(value);">Spain</option>
+                        </div>
+                      </div> <!-- !post__translate -->
+                      
                     </div>
 
                     <div class="post__siteinfo row">
@@ -203,6 +186,7 @@
     <footer>
 
     </footer>
+
     <script
     src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -212,5 +196,26 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
     <script type="text/javascript" src="./js/blur.js"></script>
+    <script stype="text/javascript">
+      function showMenu(button) {
+        console.log(button);
+        if ($(button).parent().find(".post__dropdown-content").css("display") == "none") {
+          $(button).find("img").removeClass("post__translate-icon--shake");
+          $(button).parent().find(".post__dropdown-content").css({
+          "display": "inline-block"
+        });
+        } else {
+          $(button).find("img").addClass("post__translate-icon--shake");
+          $(button).parent().find(".post__dropdown-content").css({
+          "display": "none"
+        });
+        }
+      }
+
+      function changeOption(language) {
+        console.log(language);
+        
+      }
+    </script>
 </body>
 </html>
